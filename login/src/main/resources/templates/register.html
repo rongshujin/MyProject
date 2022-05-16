@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>MyBlog Register</title>
+    <style>
+        body{
+            background: #212529;
+        }
+        .register-form{
+            width: 80%;
+            max-width: 500px;
+            margin: calc( 50vh - 150px ) auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 3em;
+            background: whitesmoke;
+
+        }
+        .input-group{
+            margin: 2rem;
+            padding: 1rem;
+        }
+    </style>
 </head>
 <body>
+
+<div class="register-form">
+    <div>
+        <h1><p class="register" style="font-family: 'Arial Black'"><b>Register</b></p></h1>
+            <div>
+                <h5><p style="font-family: cursive; color: #212529">Please fill in this form to create an account.</p></h5>
+            </div>
+    </div>
+
+    <div id="form" style="text-align: center">
+        <form action = "register.html" method="post">
+            <table style="text-align:center">
+                <tr>
+                    <td>
+                        <label for="username"></label>
+                        <input type="text" id="username" name="username" placeholder="Enter UserName" style="background: whitesmoke;width:100%;"><br>
+                    </td>
+                </tr>
+                <!--<tr>
+                    <td colspan="2"><input type="text" name="email" placeholder="Email" style="background: whitesmoke;width:98%;"><br></td>
+                </tr>-->
+                <tr>
+                    <td>
+                        <label for="pwd"></label>
+                        <input type="text" id="pwd" name="pwd" placeholder="Enter Password"  style="background: whitesmoke;width: 100%"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cpwd"></label>
+                        <input type="text" id="cpwd" name="cpwd" placeholder="Confirm Password"  style="background: whitesmoke;width: 100%"><br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <br><p style="margin-left: 30px;font-family: Arial">Already have an account?<a href="https://www.google.com/" style="color: mediumseagreen">Login here</a>.</p>
+</div>
 
 </body>
 </html>
