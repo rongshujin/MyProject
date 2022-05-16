@@ -6,7 +6,7 @@
     <title>MyBlog Login</title>
     <style>
         body{
-            background: #212529;
+            background-color: #212529;
         }
         .login-form {
             width: 80%;
@@ -20,41 +20,57 @@
         .btn{
             font-size:15px;
         }
+        table{
+            font-family: Calibri;
+        }
     </style>
 </head>
 <body>
 
 <div class="login-form">
+    <div style = "width:99%;
+              height:40px;">
+
+        <p><i class="fa fa-user-circle-o" aria-hidden="true"></i></p>
+    </div>
     <div>
         <h1><p class="login" style="font-family: 'Arial Black'"><b>Login Here</b></p></h1>
     </div>
         <form action = "login.html" method="post">
 
-        <table style="text-align:center">
+        <table>
             <tr>
                 <td>
+                    <span class="un" style="text-align: left">User Name</span>
                     <label for="username"></label>
-                    <input type="text" id="username" name="username" placeholder="Enter UserName" style="background: whitesmoke;width:100%;"><br>
+                    <input class="form-control" type="text" id="username" name="username" placeholder="Enter Your User Name" style="background: whitesmoke;width:100%;"><br>
                 </td>
             </tr>
-            <!--<tr>
-                <td colspan="2"><input type="text" name="email" placeholder="Email" style="background: whitesmoke;width:98%;"><br></td>
-            </tr>-->
             <tr>
                 <td>
+                    <span class="pwd" style="text-align: left">Password</span>
                     <label for="pwd"></label>
-                    <input type="text" id="pwd" name="pwd" placeholder="Enter Password"  style="background: whitesmoke;width: 100%"><br>
+                    <input class="form-control" type="text" id="pwd" name="pwd" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%"><br>
                 </td>
             </tr>
         </table>
-        <div style="font-family: Calibri" >
-            <br><input type="checkbox"><span style="margin-left: 5px;font-family: Arial">I accept the<a href="https://www.google.com/" style="color: mediumseagreen">Terms&Privacy</a> & <a href="https://www.google.com/" style="color: mediumseagreen">Terms of user</a>.</span>
-            <div class="d-grid gap-2">
-                <br><input button type="submit" class="btn btn-primary" value="Sign Up"  style="background: mediumseagreen;color: aliceblue">
+
+            <div style="font-family: Calibri" >
+                <br><input type="checkbox"><span style="margin-left: 5px;font-family: Calibri">I accept the <a href="https://www.google.com/" style="color: mediumseagreen">Terms&Privacy</a> & <a href="https://www.google.com/" style="color: mediumseagreen">Terms of user</a>.</span>
             </div>
-        </div>
+            <br><div style = "width:99%;
+                              height:40px;">
+                <input type="submit" class="btn btn-primary rounded submit p-3 px-5" value="Login" style="width: 99%;
+                                                                                                          height:40px;
+                                                                                                          background-color: mediumseagreen;">
+            </div>
         </form>
-        <br><p style="margin-left: 0px;font-family: Calibri" class="aaa">Have no account yet?<a href="http://www.google.com" style="color: mediumseagreen"><b>Register</b></a>.</p>
+
+        <br><p style="margin-left: 30px;
+                      font-family: Calibri;
+                      text-align: center"><a href="https://www.google.com/" style="color: mediumseagreen">Forgot Password ?</a></p>
+        <br><p style="font-family: Calibri;
+                      text-align: center" class="aaa">Have no account yet ? <a href="http://www.google.com" style="color: mediumseagreen"> Register</a>.</p>
     </div>
 </div>
 

@@ -7,6 +7,7 @@
     <style>
         body{
             background: #212529;
+            font-family: Calibri;
         }
         .register-form{
             width: 80%;
@@ -18,9 +19,11 @@
             background: whitesmoke;
 
         }
-        .input-group{
-            margin: 2rem;
-            padding: 1rem;
+        .btn{
+            font-size:15px;
+        }
+        table{
+            font-family: Calibri;
         }
     </style>
 </head>
@@ -30,39 +33,51 @@
     <div>
         <h1><p class="register" style="font-family: 'Arial Black'"><b>Register</b></p></h1>
             <div>
-                <h5><p style="font-family: cursive; color: #212529">Please fill in this form to create an account.</p></h5>
+                <h5><p style="font-family: Calibri Light ; color: #212529">Please fill in this form to create an account.</p></h5>
             </div>
     </div>
 
-    <div id="form" style="text-align: center">
+    <div>
         <form action = "register.html" method="post">
-            <table style="text-align:center">
+            <table>
                 <tr>
                     <td>
+                        <span class="un" style="text-align: left">User Name</span>
                         <label for="username"></label>
-                        <input type="text" id="username" name="username" placeholder="Enter UserName" style="background: whitesmoke;width:100%;"><br>
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Enter Your UserName" style="background: whitesmoke;width:100%;"><br>
                     </td>
                 </tr>
                 <!--<tr>
                     <td colspan="2"><input type="text" name="email" placeholder="Email" style="background: whitesmoke;width:98%;"><br></td>
                 </tr>-->
                 <tr>
+                    <div style = "width:99%;
+                                height:10px;">
                     <td>
+                        <span class="un" style="text-align: left">Password</span>
                         <label for="pwd"></label>
-                        <input type="text" id="pwd" name="pwd" placeholder="Enter Password"  style="background: whitesmoke;width: 100%"><br>
+                        <input class="form-control" type="text" id="pwd" name="pwd" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%"><br>
                     </td>
+                    </div>
                 </tr>
                 <tr>
                     <td>
+                        <span class="un" style="text-align: left">Confirm Password</span>
                         <label for="cpwd"></label>
-                        <input type="text" id="cpwd" name="cpwd" placeholder="Confirm Password"  style="background: whitesmoke;width: 100%"><br>
+                        <input class="form-control" type="text" id="cpwd" name="cpwd" placeholder="Confirm Password"  style="background: whitesmoke;width: 100%"><br>
                     </td>
                 </tr>
             </table>
+            <br><div style = "width:99%;
+                        height:40px;">
+                <input type="submit" class="btn btn-primary rounded submit p-3 px-5" value="Register" style="width: 99%;
+                                                                                                             height:40px;
+                                                                                                             background-color: mediumseagreen;">
+                </div>
         </form>
-    </div>
 
-    <br><p style="margin-left: 30px;font-family: Arial">Already have an account?<a href="https://www.google.com/" style="color: mediumseagreen">Login here</a>.</p>
+    </div>
+    <br><p style="margin-left: 30px;font-family: Calibri;text-align: center">Already have an account ?<a href="https://www.google.com/" style="color: mediumseagreen"> Login here</a>.</p>
 </div>
 
 </body>
