@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link href="mystyle.css" rel="stylesheet">
     <title>MyBlog Login</title>
     <style>
         body{
@@ -12,12 +13,13 @@
         .login-form {
             width: 80%;
             max-width: 500px;
-            margin: calc(50vh - 150px) auto;
+            margin: calc(50vh - 288px) auto 0;
             border: 1px solid black;
             border-radius: 10px;
             padding: 3em;
             background: whitesmoke;
         }
+
         .btn{
             font-size:15px;
         }
@@ -49,7 +51,7 @@
                     <td>
                         <span class="pwd" style="text-align: left"><b>Password</b></span>
                         <label for="pwd"></label>
-                        <input class="form-control" type="text" id="pwd" name="pwd" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%"><br>
+                        <input class="form-control" type="password" id="pwd" name="pwd" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%"><br>
                     </td>
                 </tr>
             </table>

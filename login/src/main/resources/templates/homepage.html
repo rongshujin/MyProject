@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>My Blog Homepage</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="mystyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
 </head>
 <body>
-<!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#!">Rong's Photo Studio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+<nav class="navbar">
+    <div class="container" style="background-color: #1a1e21; width: 100%">
+        <a class="navbar-brand" href="#!" style="color: #ffffff">Rong's Photo Studio</a>
+            <br><ul class="navbar-list">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
@@ -33,9 +33,9 @@
 
 <div class="container">
     <div class="row">
-     
+
         <div class="col-lg-8">
-            <!-- Featured blog post-->
+
             <div class="card mb-4">
                 <a href="#!"><img class="card-img-top" src="img/1.jpg" alt="..." /></a>
                 <div class="card-body">
@@ -45,10 +45,10 @@
                     <a class="btn btn-dark" href="#!">Read more →</a>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-6">
-                    <!-- Blog post-->
+
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="img/3.jpg" alt="..." /></a>
                         <div class="card-body">
@@ -58,7 +58,7 @@
                             <a class="btn btn-dark" href="#!">Read more →</a>
                         </div>
                     </div>
-                    
+
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="img/4.jpg" alt="..." /></a>
                         <div class="card-body">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    
+
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="img/2.jpg" alt="..." /></a>
                         <div class="card-body">
@@ -80,7 +80,7 @@
                             <a class="btn btn-dark" href="#!">Read more →</a>
                         </div>
                     </div>
-                   
+
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="img/6.jpg" alt="..." /></a>
                         <div class="card-body">
@@ -92,25 +92,24 @@
                     </div>
                 </div>
             </div>
-            
         </div>
-        <!-- Side widgets-->
+
         <div class="col-lg-4">
-            <!-- Search widget-->
+
             <div class="card mb-4">
-                <div class="card-header">Search</div>
+                <div class="card-header">Search　検索</div>
                 <div class="card-body">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
-                        <button class="btn btn-dark" id="button-search" type="button">search</button>
+                        <input class="form-control" style="width: 70%" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
+                        <button class="btn btn-dark" id="button-search" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
             </div>
-            
+
             <div class="card mb-4">
-                <div class="card-header">News</div>
+                <div class="card-header">News　ニュース</div>
                 <div class="card-body">
-                    <div class="row news-list" style="font-family: 'BIZ UDPゴシック';font-size: 15px">
+                    <div class="row news-list" style="font-size: 15px">
                         <div class="col-sm-6">
                             <ul class="list-unstyled mb-0" style="color: #1a1e21">
                                 <li><a href="#!">成人式</a></li>
@@ -128,9 +127,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="card mb-4">
-                <div class="card-header">Campaign</div>
+                <div class="card-header">Campaign　キャンペーン</div>
                 <div class="card-body"></div>
             </div>
         </div>
@@ -138,8 +137,7 @@
 </div>
 
 <footer class="py-5 bg-dark">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+    <div class="container" style="background-color: #1a1e21; width: 100%; height:78px"><p class="m-0 text-center text-white" ></p></div>
 </footer>
-
 </body>
 </html>
