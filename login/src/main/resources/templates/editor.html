@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Editor Page</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .inputfile {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#!">Rong's Photo Studio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="py-5 bg-light border-bottom mb-4">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Upload your story !</h1>
+        </div>
+    </div>
+</header>
+        <form action = "login.html" method="post" style="text-align: center" enctype="multipart/form-data">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <span class="input-group-text">Title</span>
+                                    <input class="form-control" type="text" placeholder="Enter your title here...">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- Introduction-->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <span class="input-group-text">Introduction</span>
+                                    <input class="form-control" type="text" placeholder="Enter introduction to describe your story..." aria-label="Enter search term...">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card mb-4">
+                                <span class="input-group-text">Story</span>
+                                <textarea class="form-control" placeholder="Enter your story here..."></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="card mb-4">
+                           
+                            <div class="input-group-text" style="justify-content: center">
+                                <input type="file" name="file" id="file" class="inputfile" style="display: none">
+                                <label for="file" class='btn btn-success' >Choose a file</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+<script>
+    function changepic(obj) {
+        //console.log(obj.files[0]);//获取上传文件的name
+        var newsrc=getObjectURL(obj.files[0]);
+        document.getElementById('show').src=newsrc;
+    }
+    //建立一個可存取到該file的url
+    function getObjectURL(file) {
+        var url = null ;
+        // 执行的效果一样 针对不同的浏览器执行不同的 js 函数
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+</script>
+    </div>
+</div>
+
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+</footer>
+
+</body>
+</html>
