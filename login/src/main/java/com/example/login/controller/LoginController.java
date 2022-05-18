@@ -49,6 +49,13 @@ public class LoginController {
 	
 	@GetMapping("/homepage")
 	public String getSuccessView() {
+		
 		return "homepage";
+	}
+	
+	@GetMapping("/editor")
+	public String getEditorView() {
+		log.debug("bbb");
+		return "editor"; 
 	}
 }

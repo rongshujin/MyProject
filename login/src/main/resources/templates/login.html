@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link href="mystyle.css" rel="stylesheet">
+    <link href="css/mystyle.css" rel="stylesheet">
+    <script src="js/loginPage.js"></script>
     <title>MyBlog Login</title>
     <style>
         body{
@@ -37,31 +38,31 @@
     <div>
         <h1><p class="login" style="font-family: 'Arial Black';text-align: center"><b>Login Here</b></p></h1>
     </div>
-        <form action="http://localhost:8080/login" method="post">
+        <form action = "login" method="post">
 
             <table style="width: 100%">
                 <tr>
                     <td>
                         <span class="un" style="text-align: left"><b>User Name</b></span>
                         <label for="username"></label>
-                        <input class="form-control" type="text" id="username" name="username" placeholder="Enter Your User Name" style="background: whitesmoke;width:100%;"><br>
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Enter Your User Name" style="background: whitesmoke;width:100%;" required><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span class="pwd" style="text-align: left"><b>Password</b></span>
+                        <span class="password" style="text-align: left"><b>Password</b></span>
                         <label for="password"></label>
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%"><br>
+                        <input class="form-control" type="password" id="pwd" name="password" placeholder="Enter Your Password"  style="background: whitesmoke;width: 100%" required><br>
                     </td>
                 </tr>
             </table>
 
                 <div style="font-family: Calibri" >
-                    <br><input type="checkbox"><span style="margin-left: 5px;font-family: Calibri">I accept the <a href="https://www.google.com/" style="color: mediumseagreen">Terms&Privacy</a> & <a href="https://www.google.com/" style="color: mediumseagreen">Terms of user</a>.</span>
+                    <br><input id="checkbox" type="checkbox"><span style="margin-left: 5px;font-family: Calibri">I accept the <a href="https://www.google.com/" style="color: mediumseagreen">Terms&Privacy</a> & <a href="https://www.google.com/" style="color: mediumseagreen">Terms of user</a>.</span>
                 </div>
                 <br><div style = "width:99%;
                                   height:40px;">
-                    <input type="submit" class="btn btn-primary rounded submit p-3 px-5" value="Login" style="width: 99%;
+                    <input id="submit" type="submit" class="btn btn-primary rounded submit p-3 px-5" value="Login" style="width: 99%;
                                                                                                               height:40px;
                                                                                                               background-color: mediumseagreen;">
                 </div>
