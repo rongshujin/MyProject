@@ -4,4 +4,6 @@
 
 ##Register页面 已完成  
 
-##homepage页面 正在进行
+##homepage页面 已完成  
+
+##编辑页面 已完成
