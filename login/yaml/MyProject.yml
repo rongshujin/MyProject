@@ -6,6 +6,38 @@ info:            # API定義全体の説明
 servers:         # APIを返すサーバーの情報
   - url: https://localhost:8080
 paths:           # ここにAPI定義のリストを書いていく
+  /register:
+    get:
+      tags:
+        - users
+      description: '返回注册界面'
+      operationId: getRegisterView
+      responses:
+        '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/RegisterHtml"
+    post:
+      tags:
+        - users
+      description: '接受用户注册信息'
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              $ref: "#/components/schemas/RegisterHtml"
+      responses:
+          '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/Register"    
+  
   /login:        # /login でログインの一覧を取得する
     get:
       tags:
@@ -37,38 +69,10 @@ paths:           # ここにAPI定義のリストを書いていく
             text/html:    
               schema:
                 $ref: "#/components/schemas/Login"
+        '404':
+          description: A user with the specified ID was not found.        
 
-  /register:
-    get:
-      tags:
-        - users
-      description: '返回注册界面'
-      operationId: getRegisterView
-      responses:
-        '200':
-            description: OK
-            content:
-              text/html:    
-                schema:
-                  $ref: "#/components/schemas/RegisterHtml"
-    post:
-      tags:
-        - users
-      description: '接受用户注册信息'
-      operationId: register
-      requestBody:
-        required: true
-        content:
-          text/json:
-            schema:
-              $ref: "#/components/schemas/RegisterHtml"
-      responses:
-          '200':
-            description: OK
-            content:
-              text/html:    
-                schema:
-                  $ref: "#/components/schemas/Register"        
+      
 
   /homepage:
     get:
@@ -83,6 +87,9 @@ paths:           # ここにAPI定義のリストを書いていく
               text/html:    
                 schema:
                   $ref: "#/components/schemas/HomepageHtml"
+
+  /search:
+                   
 
   /editor:
     get:
@@ -131,16 +138,6 @@ components:  # ここに個別のスキーマ情報を書く
         password:
           type: "string"
 
-    LoginHtml:
-      type: "string"
-    Login:
-      type: "object"
-      properties:
-        username:
-          type: "string"
-        password:
-          type: "string"
-
     RegisterHtml:
       type: "string"
     Register:
@@ -151,6 +148,16 @@ components:  # ここに個別のスキーマ情報を書く
         password:
           type: "string"
         password_again:
+          type: "string"
+
+    LoginHtml:
+      type: "string"
+    Login:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        password:
           type: "string"
 
     HomepageHtml:
