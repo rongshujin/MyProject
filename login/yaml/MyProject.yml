@@ -22,7 +22,7 @@ paths:           # ここにAPI定義のリストを書いていく
     post:
       tags:
         - users
-      description: '接受用户注册信息'
+      description: '接受用户注册信息 两次密码一致的话返回login'
       operationId: register
       requestBody:
         required: true
@@ -54,7 +54,7 @@ paths:           # ここにAPI定義のリストを書いていく
     post:
       tags:
         - users
-      description: '接受用户登陆信息'
+      description: '接受用户登陆信息，成功的话返回homepage界面'
       operationId: login
       requestBody: #如果操作发送请求体，使用requestBody关键字来描述请求体内容和媒体类型
         required: true
@@ -72,14 +72,18 @@ paths:           # ここにAPI定義のリストを書いていく
         '404':
           description: A user with the specified ID was not found.        
 
-      
-
   /homepage:
     get:
       tags:
-        - users
+        - blogs
       description: '返回博客主界面'
       operationId: getSuccessView
+      parameters:
+        - in: query
+          name: search
+          description: '搜索'
+          schema:
+            type: string
       responses:
         '200':
             description: OK
@@ -88,13 +92,10 @@ paths:           # ここにAPI定義のリストを書いていく
                 schema:
                   $ref: "#/components/schemas/HomepageHtml"
 
-  /search:
-                   
-
   /editor:
     get:
       tags:
-        - users
+        - blogs
       description: '返回新增博客内容界面'
       operationId: getEditorView
       responses:
@@ -106,7 +107,7 @@ paths:           # ここにAPI定義のリストを書いていく
                   $ref: "#/components/schemas/EditorHtml"  
     post:
       tags:
-        - users
+        - blogs
       description: '接受用户注册信息'
       operationId: editor
       requestBody:

@@ -20,10 +20,10 @@ public class LoginController {
 	private UserInfoRepository userInfoRepository;  //对interface实例化
 	
 
-	@GetMapping("/login")
-	public String getLoginView() {
+	@GetMapping("/login")  //01 输入url请求页面
+	public String getLoginView() {  //对应函数
 		log.debug("aaa");
-		return "login"; //默认返回的是html文件 后缀可以省略
+		return "login"; //02 找到对应页面并渲染数据 与templates里的login.html文件对应
 	}
 
 	@PostMapping("/login")
