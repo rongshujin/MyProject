@@ -1,0 +1,174 @@
+openapi: '3.0.2' # 使用するOpenAPIのバージョン
+info:            # API定義全体の説明
+  title: blogs system
+  description: this is a blogs system for Lighthouse Plan
+  version: '1.0'
+servers:         # APIを返すサーバーの情報
+  - url: https://localhost:8080
+paths:           # ここにAPI定義のリストを書いていく
+  /login:        # /login でログインの一覧を取得する
+    get:
+      tags:
+        - users
+      description: '返回登陆界面'
+      operationId: getLoginView
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/LoginHtml"  # componentsに定義したスキーマ情報をロード
+    post:
+      tags:
+        - users
+      description: '接受用户登陆信息'
+      operationId: login
+      requestBody: #如果操作发送请求体，使用requestBody关键字来描述请求体内容和媒体类型
+        required: true
+        content:
+          text/json:
+            schema:
+              $ref: "#/components/schemas/Users"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/Login"
+
+  /register:
+    get:
+      tags:
+        - users
+      description: '返回注册界面'
+      operationId: getRegisterView
+      responses:
+        '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/RegisterHtml"
+    post:
+      tags:
+        - users
+      description: '接受用户注册信息'
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              $ref: "#/components/schemas/RegisterHtml"
+      responses:
+          '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/Register"        
+
+  /homepage:
+    get:
+      tags:
+        - users
+      description: '返回博客主界面'
+      operationId: getRegisterView
+      responses:
+        '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/HomepageHtml"
+
+  /editor:
+    get:
+      tags:
+        - users
+      description: '返回新增博客内容界面'
+      operationId: getEditorView
+      responses:
+        '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/EditorHtml"  
+    post:
+      tags:
+        - users
+      description: '接受用户注册信息'
+      operationId: register
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              $ref: "#/components/schemas/EditorHtml"
+      responses:
+          '200':
+            description: OK
+            content:
+              text/html:    
+                schema:
+                  $ref: "#/components/schemas/Editor"              
+        
+
+
+
+
+
+components:  # ここに個別のスキーマ情報を書く
+  schemas:
+    Users:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        password:
+          type: "string"
+
+    LoginHtml:
+      type: "string"
+    Login:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        password:
+          type: "string"
+
+    RegisterHtml:
+      type: "string"
+    Register:
+      type: "string"
+      properties:
+        username:
+          type: "string"
+        password:
+          type: "string"
+        password_again:
+          type: "string"
+
+    HomepageHtml:
+      type: "string"
+
+    EditorHtml:
+      type: "string"
+    Editor:
+      type: "string"
+      properties:
+        title: 
+          type: "string"
+        introduction:
+          type: "string"
+        story:
+          type: "string"
+        img:
+          type: 
+
+
+            
