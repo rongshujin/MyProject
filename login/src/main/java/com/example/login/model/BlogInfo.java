@@ -17,18 +17,19 @@ import javax.persistence.Id;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserInfo{
+public class BlogInfo{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	
-	private String name;
+	private String title;
 	
-	private String password;
+	private String introducton;
+	
+	private String story;
+	
+	private String img;
 
 	
 	
 }
-
-

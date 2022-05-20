@@ -75,7 +75,7 @@ paths:           # ここにAPI定義のリストを書いていく
       tags:
         - users
       description: '返回博客主界面'
-      operationId: getRegisterView
+      operationId: getSuccessView
       responses:
         '200':
             description: OK
@@ -101,7 +101,7 @@ paths:           # ここにAPI定義のリストを書いていく
       tags:
         - users
       description: '接受用户注册信息'
-      operationId: register
+      operationId: editor
       requestBody:
         required: true
         content:
@@ -124,8 +124,8 @@ paths:           # ここにAPI定義のリストを書いていく
 components:  # ここに個別のスキーマ情報を書く
   schemas:
     Users:
-      type: "object"
-      properties:
+      type: "object" # 对象是属性/值对的集合
+      properties:  # 定义对象属性
         username:
           type: "string"
         password:
@@ -144,7 +144,7 @@ components:  # ここに個別のスキーマ情報を書く
     RegisterHtml:
       type: "string"
     Register:
-      type: "string"
+      type: "object"
       properties:
         username:
           type: "string"
@@ -159,7 +159,7 @@ components:  # ここに個別のスキーマ情報を書く
     EditorHtml:
       type: "string"
     Editor:
-      type: "string"
+      type: "object"
       properties:
         title: 
           type: "string"
@@ -168,7 +168,9 @@ components:  # ここに個別のスキーマ情報を書く
         story:
           type: "string"
         img:
-          type: 
+          type: "string"
+          format: "byte"
+          description: Base64-encoded contents of the image
 
 
             
