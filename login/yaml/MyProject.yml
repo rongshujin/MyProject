@@ -29,7 +29,7 @@ paths:           # ここにAPI定義のリストを書いていく
         content:
           text/json:
             schema:
-              $ref: "#/components/schemas/RegisterHtml"
+              $ref: "#/components/schemas/Register"
       responses:
           '200':
             description: OK
@@ -68,9 +68,7 @@ paths:           # ここにAPI定義のリストを書いていく
           content:
             text/html:    
               schema:
-                $ref: "#/components/schemas/Login"
-        '404':
-          description: A user with the specified ID was not found.        
+                $ref: "#/components/schemas/Login"     
 
   /homepage:
     get:
@@ -83,7 +81,10 @@ paths:           # ここにAPI定義のリストを書いていく
           name: search
           description: '搜索'
           schema:
-            type: string
+                type: "object"
+                properties:
+                  userId:
+                    type: "string"
       responses:
         '200':
             description: OK
@@ -98,24 +99,44 @@ paths:           # ここにAPI定義のリストを書いていく
         - blogs
       description: '返回新增博客内容界面'
       operationId: getEditorView
-      responses:
-        '200':
-            description: OK
-            content:
-              text/html:    
-                schema:
-                  $ref: "#/components/schemas/EditorHtml"  
-    post:
-      tags:
-        - blogs
-      description: '接受用户注册信息'
-      operationId: editor
       requestBody:
         required: true
         content:
           text/json:
             schema:
-              $ref: "#/components/schemas/EditorHtml"
+                type: "object"
+                properties:
+                  userId:
+                    type: "string"
+                  blogId:
+                    type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                type: "string"
+                example: "edit.html" 
+
+    post:
+      tags:
+        - blogs
+      description: '接受用户新增博客信息，并返回homepage页面'
+      operationId: addblog
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              type: "object"
+              properties:
+                username:
+                  type: "string"
+                title:
+                  type: "string"
+                content:
+                  type: "string"
       responses:
           '200':
             description: OK
@@ -124,6 +145,90 @@ paths:           # ここにAPI定義のリストを書いていく
                 schema:
                   $ref: "#/components/schemas/Editor"              
         
+  /delete:
+    get:
+      tags:
+        - blogs
+      description: '接受删除blog的信息，并返回新的blog页面'
+      operationId: deleteBlog
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+                type: "object"
+                properties:
+                  userId:
+                    type: "string"
+                  blogId:
+                    type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/HomepageHtml"
+
+  /update:
+    get:
+      tags:
+        - blogs
+      description: '返回更新页面'
+      operationId: deleteBlog
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+                type: "object"
+                properties:
+                  userId:
+                    type: "string"
+                  blogId:
+                    type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/UpdateHtml"
+    post:
+      tags:
+        - blogs
+      description: '接受用户输入更新的信息,并返回blog页面'
+      operationId: updateBlog
+      requestBody:
+        required: true
+        content:
+          text/json:
+            schema:
+              type: "object"
+              properties:
+                username:
+                  type: "string"
+                blogId:
+                  type: "string"
+                title:
+                  type: "string"
+                content:
+                  type: "string"
+      responses:
+        '200':
+          description: OK
+          content:
+            text/html:    
+              schema:
+                $ref: "#/components/schemas/HomepageHtml"
+
+
+
+
+
+
+
+
 
 
 
@@ -162,7 +267,27 @@ components:  # ここに個別のスキーマ情報を書く
           type: "string"
 
     HomepageHtml:
-      type: "string"
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        blogs:
+          type: array
+          items:
+            $ref: "#/components/schemas/Homepage"
+        view:
+          type: "string"
+          example: "homepage.html"
+
+    Homepage:
+      type: "object"
+      properties:
+        userId:
+          type: "string"
+        title:
+          type: "string"
+        content:
+          type: "string"      
 
     EditorHtml:
       type: "string"
@@ -180,5 +305,18 @@ components:  # ここに個別のスキーマ情報を書く
           format: "byte"
           description: Base64-encoded contents of the image
 
-
+    UpdateHtml:
+      type: "object"
+      properties:
+        userId:
+          type: "string"
+        username:
+          type: "string"
+        blog:
+          type: "object"
+          items:
+            $ref: "#/components/schemas/Homepage"
+        view:
+          type: "string"
+          example: "update.html"
             

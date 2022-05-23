@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>My Blog Homepage</title>
-    <link href="css/mystyle.css" rel="stylesheet">
+    <link href="../css/mystyle.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
 </head>
@@ -11,12 +11,18 @@
 
 <nav class="navbar">
     <div class="container" style="background-color: #1a1e21; width: 100%">
-        <a class="navbar-brand" href="#!" style="color: #ffffff">Rong's Blog</a>
+        <!-- <a class="navbar-brand" href="#!" style="color: #ffffff">Rong's Blog</a> -->
+        <div class="navbar-brand" style="color: #ffffff"><p><span 
+               		th:text="${username}"></span>様、
+					いらっしゃいませ！<br></p>
+					<span th:text="${id}"></span>
+					<span th:text="${pass}"></span>
+		</div>			
             <br><ul class="navbar-list">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Start your own Blog !</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/editor">Start your own Blog !</a></li>
             </ul>
         </div>
     </div>
