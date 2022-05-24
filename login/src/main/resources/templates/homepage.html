@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>My Blog Homepage</title>
@@ -12,11 +12,10 @@
 <nav class="navbar">
     <div class="container" style="background-color: #1a1e21; width: 100%">
         <!-- <a class="navbar-brand" href="#!" style="color: #ffffff">Rong's Blog</a> -->
-        <div class="navbar-brand" style="color: #ffffff"><p><span 
-               		th:text="${username}"></span>様、
-					いらっしゃいませ！<br></p>
-					<span th:text="${id}"></span>
-					<span th:text="${pass}"></span>
+        <div class="navbar-brand" style="color: #ffffff">
+        			<p><span th:text="${username}">
+        				</span>様、いらっしゃいませ！<br>
+						<span th:text="${id}"></span></p>
 		</div>			
             <br><ul class="navbar-list">
                 <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
@@ -68,10 +67,11 @@
                     <div class="card mb-4">
                         <!--<a href="#!"><img class="card-img-top" src="img/4.jpg" alt="..." /></a>-->
                         <div class="card-body">
-                            <div class="small text-muted">March 7, 2021</div>
-                            <h2 class="card-title h4">Post Title</h2>
-                            <p class="card-text">Introduction</p>
-                            <a class="btn btn-dark" href="#!">Read more →</a>
+                        	<div class="small text-muted">June 4, 2018</div>
+                        	<span th:text="${username}"></span>
+                            <h2 class="card-title h4"><span th:text="${title}"></span></h2>
+                            <p class="card-text"><span th:text="${introduction}"></span></p>
+                            <p class="btn btn-dark" href="#!"><span th:utext="${story}"></span></p>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="img/2.jpg" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 28, 2022</div>
+                            <div class="small text-muted">June 4, 2018</div>
                             <h2 class="card-title h4">Post Title</h2>
                             <p class="card-text">Introduction</p>
                             <a class="btn btn-dark" href="#!">Read more →</a>

@@ -44,10 +44,15 @@ public class EditorController {
 		BlogInfoRepository.save(blogInfo);
 		
 		mv.addObject("username",username);
+		mv.addObject("title",title);
+		mv.addObject("introduction",introduction);
+		mv.addObject("story",story);
+		
 		mv.setViewName("homepage");
 		
 		/* } */
 		return mv;
 	}
+	
 
 }
